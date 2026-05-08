@@ -1,0 +1,386 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LeetCode Patterns Cheat Sheet</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        margin: 0;
+        padding: 30px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #38bdf8;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #1e293b;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+        margin-top: 0;
+        color: #facc15;
+    }
+
+    .section-title {
+        color: #38bdf8;
+        margin-top: 12px;
+        font-weight: bold;
+    }
+
+    code {
+        display: block;
+        background: #0f172a;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 8px;
+        overflow-x: auto;
+        color: #4ade80;
+    }
+
+    ul {
+        padding-left: 18px;
+    }
+
+    .footer {
+        margin-top: 50px;
+        text-align: center;
+        opacity: 0.7;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>LeetCode Common Patterns Cheat Sheet</h1>
+
+<div class="grid">
+
+    <!-- Two Pointers -->
+    <div class="card">
+        <h2>1. Two Pointers</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Sorted arrays</li>
+            <li>Palindromes</li>
+            <li>Pair/triplet sums</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Move pointers intelligently instead of nested loops.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+let l = 0;
+let r = arr.length - 1;
+
+while (l < r) {
+    let sum = arr[l] + arr[r];
+
+    if (sum === target) {
+        return [l, r];
+    }
+
+    if (sum < target) l++;
+    else r--;
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Two Sum II</li>
+            <li>Container With Most Water</li>
+            <li>Trapping Rain Water</li>
+        </ul>
+    </div>
+
+    <!-- Sliding Window -->
+    <div class="card">
+        <h2>2. Sliding Window</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Subarrays/substrings</li>
+            <li>Contiguous ranges</li>
+            <li>Longest/shortest sequences</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Expand and shrink a window dynamically.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+let l = 0;
+
+for (let r = 0; r < arr.length; r++) {
+
+    while (windowInvalid) {
+        l++;
+    }
+
+    result = Math.max(result, r - l + 1);
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Longest Substring Without Repeating</li>
+            <li>Minimum Window Substring</li>
+        </ul>
+    </div>
+
+    <!-- Hash Map -->
+    <div class="card">
+        <h2>3. Hash Map</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Fast lookups</li>
+            <li>Counting frequencies</li>
+            <li>Duplicates/anagrams</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Store previous information for O(1) access.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+const map = new Map();
+
+for (let i = 0; i < nums.length; i++) {
+
+    let needed = target - nums[i];
+
+    if (map.has(needed)) {
+        return [map.get(needed), i];
+    }
+
+    map.set(nums[i], i);
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Two Sum</li>
+            <li>Group Anagrams</li>
+        </ul>
+    </div>
+
+    <!-- Binary Search -->
+    <div class="card">
+        <h2>4. Binary Search</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Sorted arrays</li>
+            <li>Monotonic conditions</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Cut search space in half each step.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+let l = 0;
+let r = arr.length - 1;
+
+while (l <= r) {
+
+    let mid = Math.floor((l + r) / 2);
+
+    if (arr[mid] === target) return mid;
+
+    if (arr[mid] < target) l = mid + 1;
+    else r = mid - 1;
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Search Rotated Array</li>
+            <li>Koko Eating Bananas</li>
+        </ul>
+    </div>
+
+    <!-- DFS -->
+    <div class="card">
+        <h2>5. DFS</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Trees</li>
+            <li>Graphs</li>
+            <li>Backtracking</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Go deep before backtracking.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+function dfs(node) {
+
+    if (!node) return;
+
+    dfs(node.left);
+    dfs(node.right);
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Max Depth Binary Tree</li>
+            <li>Number of Islands</li>
+        </ul>
+    </div>
+
+    <!-- BFS -->
+    <div class="card">
+        <h2>6. BFS</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Shortest path</li>
+            <li>Level-order traversal</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Process nodes level by level.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+let queue = [start];
+
+while (queue.length) {
+
+    let node = queue.shift();
+
+    for (let neighbor of node.neighbors) {
+        queue.push(neighbor);
+    }
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Word Ladder</li>
+            <li>Rotting Oranges</li>
+        </ul>
+    </div>
+
+    <!-- DP -->
+    <div class="card">
+        <h2>7. Dynamic Programming</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Repeated subproblems</li>
+            <li>Optimization/counting</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Reuse previous computations.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+const dp = Array(n).fill(0);
+
+dp[0] = baseCase;
+
+for (let i = 1; i < n; i++) {
+    dp[i] = dp[i - 1] + something;
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Climbing Stairs</li>
+            <li>Coin Change</li>
+        </ul>
+    </div>
+
+    <!-- Heap -->
+    <div class="card">
+        <h2>8. Heap / Priority Queue</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Top K</li>
+            <li>Repeated min/max</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Efficiently maintain order.</p>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Kth Largest Element</li>
+            <li>Merge K Sorted Lists</li>
+        </ul>
+    </div>
+
+    <!-- Monotonic Stack -->
+    <div class="card">
+        <h2>9. Monotonic Stack</h2>
+
+        <div class="section-title">Use When</div>
+        <ul>
+            <li>Next greater/smaller element</li>
+            <li>Histogram problems</li>
+        </ul>
+
+        <div class="section-title">Core Idea</div>
+        <p>Maintain increasing/decreasing order in stack.</p>
+
+        <div class="section-title">Template</div>
+        <code>
+const stack = [];
+
+for (let i = 0; i < arr.length; i++) {
+
+    while (
+        stack.length &&
+        arr[i] > arr[stack[stack.length - 1]]
+    ) {
+        stack.pop();
+    }
+
+    stack.push(i);
+}
+        </code>
+
+        <div class="section-title">Example Problems</div>
+        <ul>
+            <li>Daily Temperatures</li>
+            <li>Largest Rectangle Histogram</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer">
+    Edit, expand, and customize this cheat sheet however you want.
+</div>
+
+</body>
+</html>
+```
