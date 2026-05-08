@@ -371,11 +371,185 @@ for (let i = 0; i < arr.length; i++) {
             <li>Largest Rectangle Histogram</li>
         </ul>
     </div>
+    <div class="card">
+    <h2>10. Greedy</h2>
 
+    <div class="section-title">Use When</div>
+    <ul>
+        <li>Local best choice works globally</li>
+        <li>Intervals/scheduling</li>
+        <li>Optimization problems</li>
+    </ul>
+
+    <div class="section-title">Core Idea</div>
+    <p>Make the best immediate decision at each step.</p>
+
+    <div class="section-title">Template</div>
+    <code>
+for (let item of items) {
+
+    if (goodChoice(item)) {
+        result++;
+    }
+}
+    </code>
+
+    <div class="section-title">Example Problems</div>
+    <ul>
+        <li>Jump Game</li>
+        <li>Merge Intervals</li>
+        <li>Gas Station</li>
+    </ul>
 </div>
 
-<div class="footer">
-    Edit, expand, and customize this cheat sheet however you want.
+<!-- Prefix Sum -->
+<div class="card">
+    <h2>11. Prefix Sum</h2>
+
+    <div class="section-title">Use When</div>
+    <ul>
+        <li>Range sum queries</li>
+        <li>Subarray sums</li>
+        <li>Cumulative computations</li>
+    </ul>
+
+    <div class="section-title">Core Idea</div>
+    <p>Store cumulative totals to answer ranges quickly.</p>
+
+    <div class="section-title">Template</div>
+    <code>
+const prefix = Array(nums.length + 1).fill(0);
+
+for (let i = 0; i < nums.length; i++) {
+    prefix[i + 1] = prefix[i] + nums[i];
+}
+
+// Sum from L to R
+let sum = prefix[R + 1] - prefix[L];
+    </code>
+
+    <div class="section-title">Example Problems</div>
+    <ul>
+        <li>Subarray Sum Equals K</li>
+        <li>Product Except Self</li>
+    </ul>
+</div>
+
+<!-- Backtracking -->
+<div class="card">
+    <h2>12. Backtracking</h2>
+
+    <div class="section-title">Use When</div>
+    <ul>
+        <li>Generate all possibilities</li>
+        <li>Permutations/combinations</li>
+        <li>Constraint search</li>
+    </ul>
+
+    <div class="section-title">Core Idea</div>
+    <p>Choose → recurse → undo.</p>
+
+    <div class="section-title">Template</div>
+    <code>
+function backtrack(path) {
+
+    if (done(path)) {
+        result.push([...path]);
+        return;
+    }
+
+    for (let choice of choices) {
+
+        path.push(choice);
+
+        backtrack(path);
+
+        path.pop();
+    }
+}
+    </code>
+
+    <div class="section-title">Example Problems</div>
+    <ul>
+        <li>Subsets</li>
+        <li>Permutations</li>
+        <li>N-Queens</li>
+    </ul>
+</div>
+
+<!-- Union Find -->
+<div class="card">
+    <h2>13. Union Find</h2>
+
+    <div class="section-title">Use When</div>
+    <ul>
+        <li>Connected components</li>
+        <li>Graph connectivity</li>
+        <li>Cycle detection</li>
+    </ul>
+
+    <div class="section-title">Core Idea</div>
+    <p>Efficiently merge and track groups.</p>
+
+    <div class="section-title">Template</div>
+    <code>
+function find(x) {
+    if (parent[x] !== x) {
+        parent[x] = find(parent[x]);
+    }
+
+    return parent[x];
+}
+
+function union(a, b) {
+    parent[find(a)] = find(b);
+}
+    </code>
+
+    <div class="section-title">Example Problems</div>
+    <ul>
+        <li>Accounts Merge</li>
+        <li>Connected Components</li>
+    </ul>
+</div>
+
+<!-- Fast & Slow Pointers -->
+<div class="card">
+    <h2>14. Fast & Slow Pointers</h2>
+
+    <div class="section-title">Use When</div>
+    <ul>
+        <li>Linked lists</li>
+        <li>Cycle detection</li>
+        <li>Middle node problems</li>
+    </ul>
+
+    <div class="section-title">Core Idea</div>
+    <p>Move pointers at different speeds.</p>
+
+    <div class="section-title">Template</div>
+    <code>
+let slow = head;
+let fast = head;
+
+while (fast && fast.next) {
+
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) {
+        return true;
+    }
+}
+    </code>
+
+    <div class="section-title">Example Problems</div>
+    <ul>
+        <li>Linked List Cycle</li>
+        <li>Find Middle Node</li>
+    </ul>
+</div>
+
 </div>
 
 </body>
