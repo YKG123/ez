@@ -1,91 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #0f172a;
-        color: #e2e8f0;
-        margin: 0;
-        padding: 30px;
-        line-height: 1.6;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 30px;
+            line-height: 1.6;
+        }
 
-    h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        color: #38bdf8;
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #38bdf8;
+        }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 20px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
 
-    .card {
-        background: #1e293b;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
-    .card h2 {
-        margin-top: 0;
-        color: #facc15;
-    }
+        .card h2 {
+            margin-top: 0;
+            color: #facc15;
+        }
 
-    .section-title {
-        color: #38bdf8;
-        margin-top: 12px;
-        font-weight: bold;
-    }
+        .section-title {
+            color: #38bdf8;
+            margin-top: 12px;
+            font-weight: bold;
+        }
 
-    code {
-        display: block;
-        background: #0f172a;
-        padding: 10px;
-        border-radius: 8px;
-        margin-top: 8px;
-        overflow-x: auto;
-        color: #4ade80;
-    }
+        code {
+            display: block;
+            background: #0f172a;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 8px;
+            overflow-x: auto;
+            color: #4ade80;
+        }
 
-    ul {
-        padding-left: 18px;
-    }
+        ul {
+            padding-left: 18px;
+        }
 
-    .footer {
-        margin-top: 50px;
-        text-align: center;
-        opacity: 0.7;
-    }
-</style>
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 
 <body>
-    <h1><a href=https://beautifier.io/> I am beautiful</a></h1>
+    <h1><a href=https://beautifier.io /> I am beautiful</a></h1>
 
-<div class="grid">
+    <div class="grid">
 
-    <!-- Two Pointers -->
-    <div class="card">
-        <h2>1. Two Pointers</h2>
+        <!-- Two Pointers -->
+        <div class="card">
+            <h2>1. Two Pointers</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Sorted arrays</li>
-            <li>Palindromes</li>
-            <li>Pair/triplet sums</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Sorted arrays</li>
+                <li>Palindromes</li>
+                <li>Pair/triplet sums</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Move pointers intelligently instead of nested loops.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Move pointers intelligently instead of nested loops.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 let l = 0;
 let r = arr.length - 1;
 
@@ -101,30 +102,32 @@ while (l < r) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Two Sum II</li>
-            <li>Container With Most Water</li>
-            <li>Trapping Rain Water</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Two Sum II</li>
+                <li>3sum (sort the array then do 2sum II)</li>
+                <li>Container With Most Water</li>
+                <li>Best time to buy and sell stock</li>
+                <li>Trapping Rain Water</li>
+            </ul>
+        </div>
 
-    <!-- Sliding Window -->
-    <div class="card">
-        <h2>2. Sliding Window</h2>
+        <!-- Sliding Window -->
+        <div class="card">
+            <h2>2. Sliding Window</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Subarrays/substrings</li>
-            <li>Contiguous ranges</li>
-            <li>Longest/shortest sequences</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Subarrays/substrings</li>
+                <li>Contiguous ranges</li>
+                <li>Longest/shortest sequences</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Expand and shrink a window dynamically.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Expand and shrink a window dynamically.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 let l = 0;
 
 for (let r = 0; r < arr.length; r++) {
@@ -137,29 +140,29 @@ for (let r = 0; r < arr.length; r++) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Longest Substring Without Repeating</li>
-            <li>Minimum Window Substring</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Longest Substring Without Repeating</li>
+                <li>Minimum Window Substring</li>
+            </ul>
+        </div>
 
-    <!-- Hash Map -->
-    <div class="card">
-        <h2>3. Hash Map</h2>
+        <!-- Hash Map -->
+        <div class="card">
+            <h2>3. Hash Map</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Fast lookups</li>
-            <li>Counting frequencies</li>
-            <li>Duplicates/anagrams</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Fast lookups</li>
+                <li>Counting frequencies</li>
+                <li>Duplicates/anagrams</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Store previous information for O(1) access.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Store previous information for O(1) access.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 const map = new Map();
 
 for (let i = 0; i < nums.length; i++) {
@@ -174,28 +177,28 @@ for (let i = 0; i < nums.length; i++) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Two Sum</li>
-            <li>Group Anagrams</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Two Sum</li>
+                <li>Group Anagrams</li>
+            </ul>
+        </div>
 
-    <!-- Binary Search -->
-    <div class="card">
-        <h2>4. Binary Search</h2>
+        <!-- Binary Search -->
+        <div class="card">
+            <h2>4. Binary Search</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Sorted arrays</li>
-            <li>Monotonic conditions</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Sorted arrays</li>
+                <li>Monotonic conditions</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Cut search space in half each step.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Cut search space in half each step.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 let l = 0;
 let r = arr.length - 1;
 
@@ -210,29 +213,29 @@ while (l <= r) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Search Rotated Array</li>
-            <li>Koko Eating Bananas</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Search Rotated Array</li>
+                <li>Koko Eating Bananas</li>
+            </ul>
+        </div>
 
-    <!-- DFS -->
-    <div class="card">
-        <h2>5. DFS</h2>
+        <!-- DFS -->
+        <div class="card">
+            <h2>5. DFS</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Trees</li>
-            <li>Graphs</li>
-            <li>Backtracking</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Trees</li>
+                <li>Graphs</li>
+                <li>Backtracking</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Go deep before backtracking.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Go deep before backtracking.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 function dfs(node) {
 
     if (!node) return;
@@ -242,28 +245,27 @@ function dfs(node) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Max Depth Binary Tree</li>
-            <li>Number of Islands</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Max Depth Binary Tree</li>
+            </ul>
+        </div>
 
-    <!-- BFS -->
-    <div class="card">
-        <h2>6. BFS</h2>
+        <!-- BFS -->
+        <div class="card">
+            <h2>6. BFS</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Shortest path</li>
-            <li>Level-order traversal</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Shortest path</li>
+                <li>Level-order traversal</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Process nodes level by level.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Process nodes level by level.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 let queue = [start];
 
 while (queue.length) {
@@ -276,28 +278,28 @@ while (queue.length) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Word Ladder</li>
-            <li>Rotting Oranges</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Word Ladder</li>
+                <li>Rotting Oranges</li>
+            </ul>
+        </div>
 
-    <!-- DP -->
-    <div class="card">
-        <h2>7. Dynamic Programming</h2>
+        <!-- DP -->
+        <div class="card">
+            <h2>7. Dynamic Programming</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Repeated subproblems</li>
-            <li>Optimization/counting</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Repeated subproblems</li>
+                <li>Optimization/counting</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Reuse previous computations.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Reuse previous computations.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 const dp = Array(n).fill(0);
 
 dp[0] = baseCase;
@@ -307,48 +309,51 @@ for (let i = 1; i < n; i++) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Climbing Stairs</li>
-            <li>Coin Change</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Climbing Stairs</li>
+                <li>Coin Change</li>
+                <li>Longest Increasing Subsequence (start backwards, get eachlongest sequence starting at end) </li>
+                <li>Tile matching aaaaaaba problem (start from the end) </li>
+                <li>Decode ways (start from the end) </li>
+            </ul>
+        </div>
 
-    <!-- Heap -->
-    <div class="card">
-        <h2>8. Heap / Priority Queue</h2>
+        <!-- Heap -->
+        <div class="card">
+            <h2>8. Heap / Priority Queue</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Top K</li>
-            <li>Repeated min/max</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Top K</li>
+                <li>Repeated min/max</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Efficiently maintain order.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Efficiently maintain order.</p>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Kth Largest Element</li>
-            <li>Merge K Sorted Lists</li>
-        </ul>
-    </div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Kth Largest Element</li>
+                <li>Merge K Sorted Lists</li>
+            </ul>
+        </div>
 
-    <!-- Monotonic Stack -->
-    <div class="card">
-        <h2>9. Monotonic Stack</h2>
+        <!-- Monotonic Stack -->
+        <div class="card">
+            <h2>9. Monotonic Stack</h2>
 
-        <div class="section-title">Use When</div>
-        <ul>
-            <li>Next greater/smaller element</li>
-            <li>Histogram problems</li>
-        </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Next greater/smaller element</li>
+                <li>Histogram problems</li>
+            </ul>
 
-        <div class="section-title">Core Idea</div>
-        <p>Maintain increasing/decreasing order in stack.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Maintain increasing/decreasing order in stack.</p>
 
-        <div class="section-title">Template</div>
-        <code>
+            <div class="section-title">Template</div>
+            <code>
 const stack = [];
 
 for (let i = 0; i < arr.length; i++) {
@@ -364,27 +369,27 @@ for (let i = 0; i < arr.length; i++) {
 }
         </code>
 
-        <div class="section-title">Example Problems</div>
-        <ul>
-            <li>Daily Temperatures</li>
-            <li>Largest Rectangle Histogram</li>
-        </ul>
-    </div>
-    <div class="card">
-    <h2>10. Greedy</h2>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Daily Temperatures</li>
+                <li>Largest Rectangle Histogram</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>10. Greedy</h2>
 
-    <div class="section-title">Use When</div>
-    <ul>
-        <li>Local best choice works globally</li>
-        <li>Intervals/scheduling</li>
-        <li>Optimization problems</li>
-    </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Local best choice works globally</li>
+                <li>Intervals/scheduling</li>
+                <li>Optimization problems</li>
+            </ul>
 
-    <div class="section-title">Core Idea</div>
-    <p>Make the best immediate decision at each step.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Make the best immediate decision at each step.</p>
 
-    <div class="section-title">Template</div>
-    <code>
+            <div class="section-title">Template</div>
+            <code>
 for (let item of items) {
 
     if (goodChoice(item)) {
@@ -393,30 +398,30 @@ for (let item of items) {
 }
     </code>
 
-    <div class="section-title">Example Problems</div>
-    <ul>
-        <li>Jump Game</li>
-        <li>Merge Intervals</li>
-        <li>Gas Station</li>
-    </ul>
-</div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Jump Game (start backwards)</li>
+                <li>Merge Intervals</li>
+                <li>Gas Station</li>
+            </ul>
+        </div>
 
-<!-- Prefix Sum -->
-<div class="card">
-    <h2>11. Prefix Sum</h2>
+        <!-- Prefix Sum -->
+        <div class="card">
+            <h2>11. Prefix Sum</h2>
 
-    <div class="section-title">Use When</div>
-    <ul>
-        <li>Range sum queries</li>
-        <li>Subarray sums</li>
-        <li>Cumulative computations</li>
-    </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Range sum queries</li>
+                <li>Subarray sums</li>
+                <li>Cumulative computations</li>
+            </ul>
 
-    <div class="section-title">Core Idea</div>
-    <p>Store cumulative totals to answer ranges quickly.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Store cumulative totals to answer ranges quickly.</p>
 
-    <div class="section-title">Template</div>
-    <code>
+            <div class="section-title">Template</div>
+            <code>
 const prefix = Array(nums.length + 1).fill(0);
 
 for (let i = 0; i < nums.length; i++) {
@@ -427,29 +432,30 @@ for (let i = 0; i < nums.length; i++) {
 let sum = prefix[R + 1] - prefix[L];
     </code>
 
-    <div class="section-title">Example Problems</div>
-    <ul>
-        <li>Subarray Sum Equals K</li>
-        <li>Product Except Self</li>
-    </ul>
-</div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Subarray Sum Equals K</li>
+                <li>Product Except Self (compute prefix and postfix arrays of products)</li>
+                <li>Maximum/Minimum Subarray</li>
+            </ul>
+        </div>
 
-<!-- Backtracking -->
-<div class="card">
-    <h2>12. Backtracking</h2>
+        <!-- Backtracking -->
+        <div class="card">
+            <h2>12. Backtracking</h2>
 
-    <div class="section-title">Use When</div>
-    <ul>
-        <li>Generate all possibilities</li>
-        <li>Permutations/combinations</li>
-        <li>Constraint search</li>
-    </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Generate all possibilities</li>
+                <li>Permutations/combinations</li>
+                <li>Constraint search</li>
+            </ul>
 
-    <div class="section-title">Core Idea</div>
-    <p>Choose → recurse → undo.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Choose → recurse → undo.</p>
 
-    <div class="section-title">Template</div>
-    <code>
+            <div class="section-title">Template</div>
+            <code>
 function backtrack(path) {
 
     if (done(path)) {
@@ -468,30 +474,30 @@ function backtrack(path) {
 }
     </code>
 
-    <div class="section-title">Example Problems</div>
-    <ul>
-        <li>Subsets</li>
-        <li>Permutations</li>
-        <li>N-Queens</li>
-    </ul>
-</div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Subsets</li>
+                <li>Permutations</li>
+                <li>N-Queens</li>
+            </ul>
+        </div>
 
-<!-- Union Find -->
-<div class="card">
-    <h2>13. Union Find</h2>
+        <!-- Union Find -->
+        <div class="card">
+            <h2>13. Union Find</h2>
 
-    <div class="section-title">Use When</div>
-    <ul>
-        <li>Connected components</li>
-        <li>Graph connectivity</li>
-        <li>Cycle detection</li>
-    </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Connected components</li>
+                <li>Graph connectivity</li>
+                <li>Cycle detection</li>
+            </ul>
 
-    <div class="section-title">Core Idea</div>
-    <p>Efficiently merge and track groups.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Efficiently merge and track groups.</p>
 
-    <div class="section-title">Template</div>
-    <code>
+            <div class="section-title">Template</div>
+            <code>
 function find(x) {
     if (parent[x] !== x) {
         parent[x] = find(parent[x]);
@@ -505,29 +511,29 @@ function union(a, b) {
 }
     </code>
 
-    <div class="section-title">Example Problems</div>
-    <ul>
-        <li>Accounts Merge</li>
-        <li>Connected Components</li>
-    </ul>
-</div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Accounts Merge</li>
+                <li>Connected Components</li>
+            </ul>
+        </div>
 
-<!-- Fast & Slow Pointers -->
-<div class="card">
-    <h2>14. Fast & Slow Pointers</h2>
+        <!-- Fast & Slow Pointers -->
+        <div class="card">
+            <h2>14. Fast & Slow Pointers</h2>
 
-    <div class="section-title">Use When</div>
-    <ul>
-        <li>Linked lists</li>
-        <li>Cycle detection</li>
-        <li>Middle node problems</li>
-    </ul>
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Linked lists</li>
+                <li>Cycle detection</li>
+                <li>Middle node problems</li>
+            </ul>
 
-    <div class="section-title">Core Idea</div>
-    <p>Move pointers at different speeds.</p>
+            <div class="section-title">Core Idea</div>
+            <p>Move pointers at different speeds.</p>
 
-    <div class="section-title">Template</div>
-    <code>
+            <div class="section-title">Template</div>
+            <code>
 let slow = head;
 let fast = head;
 
@@ -542,15 +548,333 @@ while (fast && fast.next) {
 }
     </code>
 
-    <div class="section-title">Example Problems</div>
-    <ul>
-        <li>Linked List Cycle</li>
-        <li>Find Middle Node</li>
-    </ul>
-</div>
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Linked List Cycle</li>
+                <li>Find Middle Node</li>
+            </ul>
+        </div>
 
-</div>
 
+
+        <!-- ncr -->
+        <div class="card">
+            <h2>15. Combinatorics</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Counting combinations</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p>Discrete mathematics.</p>
+
+            <div class="section-title">Template</div>
+            <code>
+function nCr(n: number, r: number): number {
+  let bn = BigInt(n);
+  let br = BigInt(r);
+
+  if (br > bn || br < 0n) {
+    return 0;
+  }
+
+  if (br > bn - br) {
+    br = bn - br;
+  }
+
+  let result = 1n;
+
+  for (let i = 1n; i <= br; i++) {
+    result = (result * (bn - br + i)) / i;
+  }
+
+  return Number(result);
+}
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Unique Paths</li>
+            </ul>
+        </div>
+        <!-- nPr -->
+        <div class="card">
+            <h2>16. Permutations</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Counting permutations</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p>Discrete mathematics.</p>
+
+            <div class="section-title">Template</div>
+            <code>
+function permutation(n: number, r: number): number {
+  let bn = BigInt(n);
+  let br = BigInt(r);
+
+  if (br > bn || br < 0n) {
+    return 0;
+  }
+
+  let result = 1n;
+
+  for (let i = 0n; i < br; i++) {
+    result *= (bn - i);
+  }
+
+  return Number(result);
+}
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>None found tbh</li>
+                <li>But just in case i need it</li>
+            </ul>
+        </div>
+
+        <!-- nPr -->
+        <div class="card">
+            <h2>17. Overlapping Intervals</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Checking if intervals overlap</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p>Start1 \leq Start2.</p>
+
+            <div class="section-title">Template</div>
+            <code>
+/* start1 <= start2 */
+
+if (end1 < start2) {
+    /* [] () */
+    /* disjoint */
+}
+else if (end1 === start2) {
+    /* [][] */
+    /* touching */
+}
+else if (end2 <= end1) {
+    /* [()] */
+    /* interval2 fully inside interval1 */
+}
+else {
+    /* [(]) */
+    /* partial overlap */
+}
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Insert Interval</li>
+                <li>...</li>
+            </ul>
+        </div>
+
+        <!-- nPr -->
+        <div class="card">
+            <h2>18. Matrix Depth First Search</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>Running around in a matrix, depth first</li>
+                <li>Can't visit the same cell twice</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p> Process it yourself</p>
+
+            <div class="section-title">Template</div>
+            <code>
+const dirs = [
+  [-1, 0],
+  [1, 0],
+  [0, -1],
+  [0, 1],
+];
+ function dfs(matrix, row, col, visited) {
+     const rows = matrix.length;
+     const cols = matrix[0].length; /* bounds + visited check */
+     if (row < 0 || col < 0 || row >= rows || col >= cols || visited[row][col]) {
+         return;
+     }
+     visited[row][col] = true; 
+     console.log(matrix[row][col]); /* process cell */
+     for (const [dr, dc] of dirs) {
+         dfs(matrix, row + dr, col + dc, visited);
+     }
+ }
+
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Word Search</li>
+                <li>Number of Islands</li>
+            </ul>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------- -->
+        <div class="card">
+            <h2>19. Split string into array</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>split string into array</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p> bottom text </p>
+
+            <div class="section-title">Template</div>
+            <code>
+const chars = str.split("");
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>split string</li>
+            </ul>
+        </div>
+        <!-- ----------------------------------------------------------------------------- -->
+        <div class="card">
+            <h2>20. String Trie</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>you need a trie</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p> bottom text </p>
+
+            <div class="section-title">Template</div>
+            <code>
+class Trie {
+    private data
+    constructor() {
+        this.data = {}
+    }
+
+    insert(str: string): void {
+        const chars = str.split(""); 
+        let workingDirectory = this.data
+        for (const char of chars) {
+            if (!workingDirectory[char]) workingDirectory[char] = {}
+            workingDirectory = workingDirectory[char]
+        }
+        workingDirectory["end"] = true
+    }
+
+    search(str: string): boolean {
+        const chars = str.split(""); 
+        let workingDirectory = this.data
+        for (const char of chars) {
+            if (!workingDirectory[char]) return false
+            workingDirectory = workingDirectory[char]
+        }
+        return workingDirectory["end"] === true
+    }
+
+    startsWith(str: string): boolean {
+        const chars = str.split(""); 
+        let workingDirectory = this.data
+        for (const char of chars) {
+            if (!workingDirectory[char]) return false
+            workingDirectory = workingDirectory[char]
+        }
+        return true
+    }
+}
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Implement Trie (Prefix Trie)</li>
+                <li>Design Add and Search Words Data Structure</li>
+            </ul>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------- -->
+        <div class="card">
+            <h2>21. Bucket Sort</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>cursed problems with counting frequency or sorting positive integers in sub nlogn time</li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p> Create n buckets and count how many times each int appears in that bucket. </p>
+            <p> Some problems will want you to skip the rebuild step. </p>
+
+            <div class="section-title">Template</div>
+            <code>
+
+
+
+        /*
+        bucket sort for non-negative integers
+        */
+        if (nums.length === 0) return [];
+
+        /*
+        find max value
+        */
+        const max = Math.max(...nums);
+
+        /*
+        create buckets
+        */
+        const buckets = Array(max + 1).fill(0);
+
+        /*
+        count frequencies
+        */
+        for (const num of nums) {
+        buckets[num]++;
+        }
+
+        /*
+        rebuild sorted array
+        */
+        const result = [];
+
+        for (let i = 0; i < buckets.length; i++) { while (buckets[i]> 0) {
+            result.push(i);
+            buckets[i]--;
+            }
+            }
+
+            return result;
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Top K Frequent Elements</li>
+                <li>Contains Duplicate III</li>
+                <li>Maximum Gap</li>
+                <li>Sort Characters By Frequency</li>
+                <li>Top K Frequent Words</li>
+            </ul>
+        </div>
+
+
+
+
+
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------- -->
+    </div>
 </body>
+
 </html>
-```
