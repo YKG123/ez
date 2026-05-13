@@ -343,6 +343,87 @@ for (let i = 1; i < n; i++) {
             <div class="section-title">Core Idea</div>
             <p>Efficiently maintain order.</p>
 
+            <code>
+                class Heap {
+  constructor(compare = (a, b) => a - b) {
+    this.data = [];
+    this.compare = compare;
+  }
+
+  size() {
+    return this.data.length;
+  }
+
+  peek() {
+    return this.data[0];
+  }
+
+  push(value) {
+    this.data.push(value);
+    this.bubbleUp(this.data.length - 1);
+  }
+
+  pop() {
+    if (this.data.length === 0) return undefined;
+
+    const top = this.data[0];
+    const last = this.data.pop();
+
+    if (this.data.length > 0) {
+      this.data[0] = last;
+      this.bubbleDown(0);
+    }
+
+    return top;
+  }
+
+  bubbleUp(i) {
+    const arr = this.data;
+    const cmp = this.compare;
+
+    while (i > 0) {
+      const p = (i - 1) >> 1;
+
+      if (cmp(arr[i], arr[p]) >= 0) break;
+
+      [arr[i], arr[p]] = [arr[p], arr[i]];
+      i = p;
+    }
+  }
+
+  bubbleDown(i) {
+    const arr = this.data;
+    const cmp = this.compare;
+    const n = arr.length;
+
+    while (true) {
+      let left = i * 2 + 1;
+      let right = i * 2 + 2;
+      let smallest = i;
+
+      if (left < n && cmp(arr[left], arr[smallest]) < 0) {
+        smallest = left;
+      }
+
+      if (right < n && cmp(arr[right], arr[smallest]) < 0) {
+        smallest = right;
+      }
+
+      if (smallest === i) break;
+
+      [arr[i], arr[smallest]] = [arr[smallest], arr[i]];
+      i = smallest;
+    }
+  }
+}
+
+/* min heap */
+const minHeap = new Heap();
+
+/* max heap */
+const maxHeap = new Heap((a, b) => b - a);
+            </code>
+
             <div class="section-title">Example Problems</div>
             <ul>
                 <li>Kth Largest Element</li>
@@ -1118,18 +1199,106 @@ async function sendData() {
                 <li></li>
             </ul>
         </div>
-
-
-
-
-
-
-        <!------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------- -->
+        <div class="card">
+            <h2>28. Matrix BFS</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>matrix needs to bFS </li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p> gotta bfs the matrix </p>
+
+            <div class="section-title">Template</div>
+            <code>
+const dirs = [
+  [-1, 0],
+  [1, 0],
+  [0, -1],
+  [0, 1],
+];
+
+function bfs(matrix, startRow, startCol, visited) {
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+
+  /* bounds + visited check for starting cell */
+  if (
+    startRow < 0 ||
+    startCol < 0 ||
+    startRow >= rows ||
+    startCol >= cols ||
+    visited[startRow][startCol]
+  ) {
+    return;
+  }
+
+  const queue = [];
+
+  queue.push([startRow, startCol]);
+  visited[startRow][startCol] = true;
+
+  while (queue.length > 0) {
+    const [row, col] = queue.shift();
+
+    console.log(matrix[row][col]);
+
+    /* process cell */
+
+    for (const [dr, dc] of dirs) {
+      const newRow = row + dr;
+      const newCol = col + dc;
+
+      /* bounds + visited check */
+      if (
+        newRow >= 0 &&
+        newCol >= 0 &&
+        newRow < rows &&
+        newCol < cols &&
+        !visited[newRow][newCol]
+      ) {
+        visited[newRow][newCol] = true;
+        queue.push([newRow, newCol]);
+      }
+    }
+  }
+}
+    </code>
+
+            <div class="section-title">Example Problems</div>
+            <ul>
+                <li>Rotting Oranges</li>
+                <li></li>
+            </ul>
+        </div>
         <!-- ----------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------- -->
-    </div>
-    <h1><a href=https://beautifier.io /> lnɟᴉʇnɐǝq ɯɐ I</a></h1>
+        <div class="card">
+            <h2>29. Mafia</h2>
+
+            <div class="section-title">Use When</div>
+            <ul>
+                <li>mafia problems like the ones I solved 10 years ago when i was 17 </li>
+            </ul>
+
+            <div class="section-title">Core Idea</div>
+            <p> 2D dynamic programming with a cache. </p>
+
+            <div class="section-title">Template</div>
+            <code>
+        just do it with a cache and dynamically program it 
+    </code>
+
+
+
+
+            <!------------------------------------------------------------------------------- -->
+            <!-- ----------------------------------------------------------------------------- -->
+            <!-- ----------------------------------------------------------------------------- -->
+            <!-- ----------------------------------------------------------------------------- -->
+        </div>
+        <h1><a href=https://beautifier.io /> lnɟᴉʇnɐǝq ɯɐ I</a></h1>
 </body>
 
 </html>
